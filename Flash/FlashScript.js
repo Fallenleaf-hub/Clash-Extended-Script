@@ -136,7 +136,7 @@ function main(config) {
 
   config["proxy-groups"] = customGroups;
 
-  // 4. 规则集定义（显式指定 format: "text" 与 Clash 专用规则源，修复 RuleCount=0 失效问题）
+  // 4. 规则集定义
   config["rule-providers"] = {
     ai: {
       type: "http",
@@ -386,8 +386,6 @@ function main(config) {
     "DOMAIN-SUFFIX,cyberguard-u1s1.top,DIRECT",
     "RULE-SET,lan,DIRECT",
     "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
-    "DOMAIN-SUFFIX,googleapis.com,AI",
-    "DOMAIN-SUFFIX,goog,AI",
     "RULE-SET,ai,AI",
     "RULE-SET,youtube,YouTube",
     "RULE-SET,netflix,Netflix",
@@ -417,16 +415,9 @@ function main(config) {
     "RULE-SET,pikpak,新加坡节点",
     "RULE-SET,ByteDance,DIRECT",
     "RULE-SET,direct,DIRECT",
-    "RULE-SET,proxy,PROXY",
-    "DOMAIN-SUFFIX,163.com,DIRECT",
-    "DOMAIN-SUFFIX,126.net,DIRECT",
-    "DOMAIN-SUFFIX,baidu.com,DIRECT",
-    "DOMAIN-SUFFIX,douban.com,DIRECT",
-    "DOMAIN-SUFFIX,zhihu.com,DIRECT",
-    "DOMAIN-SUFFIX,weibo.com,DIRECT",
-    "DOMAIN-SUFFIX,xiaohongshu.com,DIRECT",
-    "RULE-SET,global,PROXY",
     "RULE-SET,china,DIRECT",
+    "RULE-SET,proxy,PROXY",
+    "RULE-SET,global,PROXY",
     "GEOIP,CN,DIRECT",
     "MATCH,PROXY"
   ];
