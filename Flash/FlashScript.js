@@ -9,7 +9,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇭🇰|HK|Hong|hong|香港|深港|沪港|京港|港)",
+      filter: "(?i)(🇭🇰|(?<![a-zA-Z])HK(?![a-zA-Z])|Hong|香港|深港|沪港|京港|港)",
       "include-all": true
     },
     {
@@ -17,7 +17,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇹🇼|TW|TWN|Taiwan|Taipei|taiwan|台湾|台灣|台北|台中|新北|彰化)",
+      filter: "(?i)(🇹🇼|(?<![a-zA-Z])(TW|TWN)(?![a-zA-Z])|Taiwan|Taipei|台湾|台灣|台北|台中|新北|彰化)",
       "include-all": true
     },
     {
@@ -25,7 +25,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇯🇵|JP|Japan|japan|Tokyo|tokyo|日本|东京|大阪|京日|苏日|沪日|上日|川日|深日|广日)",
+      filter: "(?i)(🇯🇵|(?<![a-zA-Z])JP(?![a-zA-Z])|Japan|Tokyo|日本|东京|大阪|京日|苏日|沪日|上日|川日|深日|广日)",
       "include-all": true
     },
     {
@@ -33,7 +33,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇸🇬|SG|Sing|sing|新加坡|狮城|沪新|京新|深新|杭新|广新)",
+      filter: "(?i)(🇸🇬|(?<![a-zA-Z])SG(?![a-zA-Z])|(?<![a-zA-Z])Sing|新加坡|狮城|沪新|京新|深新|杭新|广新)",
       "include-all": true
     },
     {
@@ -41,7 +41,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇰🇷|KR|Korea|korea|KOR|韩国|首尔|韩|韓|春川)",
+      filter: "(?i)(🇰🇷|(?<![a-zA-Z])(KR|KOR)(?![a-zA-Z])|Korea|韩国|首尔|韩|韓|春川)",
       "include-all": true
     },
     {
@@ -49,7 +49,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇺🇸|US|USA|America|america|United States|美国|凤凰城|洛杉矶|西雅图|芝加哥|纽约|沪美|美)",
+      filter: "(?i)(🇺🇸|(?<![a-zA-Z])(US|USA)(?![a-zA-Z])|America|United States|美国|凤凰城|洛杉矶|西雅图|芝加哥|纽约|沪美|美)",
       "include-all": true
     },
     {
@@ -57,7 +57,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇹🇷|TR|Turkey|turkey|Istanbul|土耳其|伊斯坦布尔)",
+      filter: "(?i)(🇹🇷|(?<![a-zA-Z])TR(?![a-zA-Z])|Turkey|Istanbul|土耳其|伊斯坦布尔)",
       "include-all": true
     },
     {
@@ -65,7 +65,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇮🇳|IN|IND|India|india|Mumbai|Delhi|印度|孟买|德里)",
+      filter: "(?i)(🇮🇳|(?<![a-zA-Z])(IN|IND)(?![a-zA-Z])|India|Mumbai|Delhi|印度|孟买|德里)",
       "include-all": true
     },
     {
@@ -73,7 +73,7 @@ function main(config) {
       type: "url-test",
       interval: 600,
       tolerance: 50,
-      filter: "(?i)(🇵🇭|PH|PHL|Philippines|philippines|Manila|菲律宾|马尼拉)",
+      filter: "(?i)(🇵🇭|(?<![a-zA-Z])(PH|PHL)(?![a-zA-Z])|Philippines|Manila|菲律宾|马尼拉)",
       "include-all": true
     }
   ];
@@ -120,17 +120,17 @@ function main(config) {
     { name: "Disney+", type: "select", proxies: standardProxies },
     { name: "Max", type: "select", proxies: standardProxies },
     { name: "TikTok", type: "select", proxies: standardProxies },
-    { name: "Spotify", type: "select", proxies: ["DIRECT"].concat(standardProxies) },
+    { name: "Spotify", type: "select", proxies: standardProxies },
     { name: "Telegram", type: "select", proxies: standardProxies },
     { name: "Twitter", type: "select", proxies: standardProxies },
     { name: "Facebook", type: "select", proxies: standardProxies },
-    { name: "PayPal", type: "select", proxies: ["DIRECT"].concat(standardProxies) },
-    { name: "Amazon", type: "select", proxies: ["DIRECT"].concat(standardProxies) },
-    { name: "苹果服务", type: "select", proxies: ["DIRECT"].concat(standardProxies) },
+    { name: "PayPal", type: "select", proxies: standardProxies },
+    { name: "Amazon", type: "select", proxies: standardProxies },
+    { name: "苹果服务", type: "select", proxies: standardProxies },
     { name: "谷歌服务", type: "select", proxies: standardProxies },
-    { name: "微软服务", type: "select", proxies: ["DIRECT"].concat(standardProxies) },
+    { name: "微软服务", type: "select", proxies: standardProxies },
     { name: "哔哩哔哩", type: "select", proxies: ["DIRECT", "PROXY", "香港节点", "台湾节点"] },
-    { name: "游戏平台", type: "select", proxies: ["DIRECT"].concat(standardProxies) },
+    { name: "游戏平台", type: "select", proxies: standardProxies },
     ...autoGroups
   ];
 
@@ -150,7 +150,7 @@ function main(config) {
       type: "http",
       behavior: "classical",
       format: "text",
-      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/ByteDance/ByteDance.list",
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ByteDance/ByteDance.list",
       path: "./ruleset/ByteDance.list",
       interval: 86400
     },
@@ -384,7 +384,8 @@ function main(config) {
   config["rules"] = [
     "DOMAIN-SUFFIX,blowingsnowclouds.cc,DIRECT",
     "DOMAIN-SUFFIX,cyberguard-u1s1.top,DIRECT",
-    "AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT",
+    "RULE-SET,lan,DIRECT",
+    "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
     "DOMAIN-SUFFIX,googleapis.com,AI",
     "DOMAIN-SUFFIX,goog,AI",
     "RULE-SET,ai,AI",
@@ -404,7 +405,7 @@ function main(config) {
     "RULE-SET,sony,游戏平台",
     "RULE-SET,nintendo,游戏平台",
     "RULE-SET,epic,游戏平台",
-    "RULE-SET,steamcn,游戏平台",
+    "RULE-SET,steamcn,DIRECT",
     "RULE-SET,steam,游戏平台",
     "RULE-SET,game,游戏平台",
     "RULE-SET,github,PROXY",
@@ -414,9 +415,9 @@ function main(config) {
     "RULE-SET,bilibili,哔哩哔哩",
     "RULE-SET,tiktok,TikTok",
     "RULE-SET,pikpak,新加坡节点",
+    "RULE-SET,ByteDance,DIRECT",
     "RULE-SET,direct,DIRECT",
     "RULE-SET,proxy,PROXY",
-    "RULE-SET,ByteDance,DIRECT",
     "DOMAIN-SUFFIX,163.com,DIRECT",
     "DOMAIN-SUFFIX,126.net,DIRECT",
     "DOMAIN-SUFFIX,baidu.com,DIRECT",
@@ -426,7 +427,6 @@ function main(config) {
     "DOMAIN-SUFFIX,xiaohongshu.com,DIRECT",
     "RULE-SET,global,PROXY",
     "RULE-SET,china,DIRECT",
-    "RULE-SET,lan,DIRECT",
     "GEOIP,CN,DIRECT",
     "MATCH,PROXY"
   ];
