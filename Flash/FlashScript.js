@@ -385,7 +385,6 @@ function main(config) {
     "DOMAIN-SUFFIX,blowingsnowclouds.cc,DIRECT",
     "DOMAIN-SUFFIX,cyberguard-u1s1.top,DIRECT",
     "RULE-SET,lan,DIRECT",
-    "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
     "RULE-SET,ai,AI",
     "RULE-SET,youtube,YouTube",
     "RULE-SET,netflix,Netflix",
